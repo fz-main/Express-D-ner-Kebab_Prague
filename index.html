@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Express Döner Kebab Praha 7</title>
+<style>
+@import url('[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap)');
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth;}
+body{background:#111;color:#fff;overflow-x:hidden;}
+section{padding:80px 10vw;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
+h1,h2,h3{margin-bottom:20px;}
+p{max-width:800px;margin-bottom:20px;}
+button,select{padding:10px 15px;margin-top:15px;border:none;border-radius:30px;background:#e63946;color:#fff;font-weight:bold;cursor:pointer;}
+header{position:relative;height:100vh;overflow:hidden;}
+header video{position:absolute;width:100%;height:100%;top:0;left:0;object-fit:cover;z-index:-1;filter:brightness(50%);}
+header h1{font-size:3em;animation:fadeIn 2s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+
+/* Навигация */
+nav{position:fixed;top:0;width:100%;padding:10px 8vw;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,0.6);backdrop-filter:blur(6px);z-index:100;}
+nav ul{list-style:none;display:flex;gap:25px;}
+nav a{color:#fff;text-decoration:none;font-weight:500;transition:0.3s;}
+nav a:hover{color:#e63946;}
+
+/* Интро */
+#intro strong{color:#e63946;}
+
+/* Преимущества */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
+.feature{padding:20px;background:#1b1b1b;border-radius:10px;transition:0.3s;}
+.feature:hover{transform:translateY(-10px);background:#222;}
+
+/* Услуги */
+.services{display:flex;flex-wrap:wrap;gap:30px;justify-content:center;}
+.card{width:250px;background:#1c1c1c;border-radius:10px;padding:20px;text-align:center;transition:0.3s;}
+.card img{width:100%;border-radius:10px;margin-bottom:15px;}
+.card:hover{transform:scale(1.05);}
+
+/* Анимация при загрузке */
+.loader{position:fixed;width:100%;height:100%;background:#000;top:0;left:0;display:flex;align-items:center;justify-content:center;z-index:9999;animation:hideLoader 2s forwards 2.5s;}
+.loader span{color:#e63946;font-size:2em;animation:blink 1s infinite;}
+@keyframes blink{50%{opacity:0.5;}}
+@keyframes hideLoader{to{opacity:0;visibility:hidden;}}
+
+/* Контакты */
+iframe{width:100%;height:400px;border:0;border-radius:10px;}
+
+/* Переключатель языка */
+.lang-switch{position:fixed;right:15px;bottom:15px;background:#e63946;color:#fff;border:none;border-radius:20px;padding:8px 15px;font-weight:bold;z-index:1000;}
+
+/* Адаптив */
+@media(max-width:600px){
+  header h1{font-size:2em;}
+  nav ul{flex-wrap:wrap;gap:10px;}
+}
+</style>
+</head>
+<body>
+
+<div class="loader"><span>Loading...</span></div>
+
+<nav>
+  <div class="logo"><strong>Express Döner Kebab</strong></div>
+  <ul>
+    <li><a href="#intro">Intro</a></li>
+    <li><a href="#features">Výhody</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#contact">Kontakt</a></li>
+  </ul>
+</nav>
+
+<header>
+  <video autoplay muted loop>
+    <source src="[cdn.pixabay.com](https://cdn.pixabay.com/video/2019/09/03/27080-356541316_large.mp4)" type="video/mp4">
+  </video>
+  <section>
+    <h1>Vítejte v <strong>Express Döner Kebab Praha 7</strong></h1>
+    <p>Autentická chuť Orientu v srdci Holešovic. Čerstvé, vydatné, chutné – každý den!</p>
+    <button onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Zobrazit nabídku</button>
+  </section>
+</header>
+
+<section id="intro">
+  <h2>O nás</h2>
+  <p><strong>Express Döner Kebab</strong> najdete na Ortenově náměstí v Praze 7. Nabízíme vždy čerstvého kebaba, dürüm rolky s masem, saláty, halloumi i falafel. Rychlá obsluha a velké porce dělají z našeho bistra oblíbené místo pro rychlý oběd.</p>
+</section>
+
+<section id="features">
+  <h2>Naše výhody</h2>
+  <div class="features">
+    <div class="feature"><h3>🍖 Čerstvé maso</h3><p>Každý kebab připravujeme z marinovaného masa s autentickým kořením.</p></div>
+    <div class="feature"><h3>⚡ Rychlé servírování</h3><p>Ideální pro rychlý oběd bez čekání – kvalita, která neztrácí tempo.</p></div>
+    <div class="feature"><h3>🥗 Veggie volba</h3><p>Falafel, halloumi, saláty – vždy čerstvé a s výraznou chutí.</p></div>
+    <div class="feature"><h3>🇨🇿 🇬🇧 🇩🇪 🇷🇺</h3><p>Podpora čtyř jazyků – čeština, angličtina, němčina, ruština.</p></div>
+  </div>
+</section>
+
+<section id="menu">
+  <h2>Menu</h2>
+  <div class="services">
+    <div class="card">
+      <img src="[cdn.pixabay.com](https://cdn.pixabay.com/photo/2017/06/02/21/17/kebab-2371609_960_720.jpg)" alt="Dürüm">
+      <h3>Dürum klasik</h3>
+      <p>Rolka plněná masem, zeleninou a dressingem — od 185 Kč</p>
+    </div>
+    <div class="card">
+      <img src="[cdn.pixabay.com](https://cdn.pixabay.com/photo/2021/06/21/18/53/kebab-6353178_960_720.jpg)" alt="Talíř kebab">
+      <h3>Mega talíř Kebab</h3>
+      <p>Extra porce masa, salát, příloha — od 225 Kč</p>
+    </div>
+    <div class="card">
+      <img src="[cdn.pixabay.com](https://cdn.pixabay.com/photo/2021/06/28/16/05/falafel-6373171_960_720.jpg)" alt="Falafel">
+      <h3>Vegetariánský falafel</h3>
+      <p>Falafel s čerstvým salátem a pita chlebem — od 170 Kč</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Kontakt</h2>
+  <p>📍 Ortenovo náměstí 28, Praha 7 - Holešovice</p>
+  <p>📞 +420 776 376 108</p>
+  <p>🕓 Po-So: 10:00–23:00 | Ne: 10:00–22:00</p>
+  <iframe 
+    src="[google.com](https://www.google.com/maps/embed?pb=!4m7!3m6!1s0x470b94b49f8889ab:0x2767f8672a542db7!8m2!3d50.1075137!4d14.4481558!16s%2Fg%2F11c48phgl5)"
+    allowfullscreen="" loading="lazy"></iframe>
+</section>
+
+<select class="lang-switch" onchange="changeLang(this.value)">
+  <option value="cs" selected>Čeština</option>
+  <option value="en">English</option>
+  <option value="de">Deutsch</option>
+  <option value="ru">Русский</option>
+</select>
+
+<script>
+function changeLang(lang){
+  const texts={
+    cs:{intro:"O nás",features:"Naše výhody",menu:"Menu",contact:"Kontakt"},
+    en:{intro:"About",features:"Benefits",menu:"Menu",contact:"Contact"},
+    de:{intro:"Über uns",features:"Vorteile",menu:"Speisekarte",contact:"Kontakt"},
+    ru:{intro:"О нас",features:"Преимущества",menu:"Меню",contact:"Контакты"}
+  };
+  document.querySelector('a[href="#intro"]').textContent=texts[lang].intro;
+  document.querySelector('a[href="#features"]').textContent=texts[lang].features;
+  document.querySelector('a[href="#menu"]').textContent=texts[lang].menu;
+  document.querySelector('a[href="#contact"]').textContent=texts[lang].contact;
+}
+</script>
+
+</body>
+</html>
